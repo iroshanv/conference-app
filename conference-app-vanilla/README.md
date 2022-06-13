@@ -1,0 +1,1 @@
+# Plain Vanilla Java Conference App, No Spring 
