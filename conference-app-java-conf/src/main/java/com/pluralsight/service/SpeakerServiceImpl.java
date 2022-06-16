@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service("speakerService")
@@ -19,12 +20,19 @@ public class SpeakerServiceImpl implements SpeakerService {
     // @Autowired
     private SpeakerRepository speakerRepository;
 
-    public SpeakerServiceImpl(){}
+    public SpeakerServiceImpl() {
+        System.out.println("speaker service impl constructor");
+    }
 
     // #2 constructor injection from configuration file using @Bean
     @Autowired // #3 constructor auto-wiring
     public SpeakerServiceImpl(SpeakerRepository speakerRepository) {
         this.speakerRepository = speakerRepository;
+    }
+
+    @PostConstruct
+    private void init(){
+        System.out.println("called after constructor");
     }
 
     // #2 setter injection from configuration file using @bean
