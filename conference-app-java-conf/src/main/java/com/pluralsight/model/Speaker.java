@@ -3,6 +3,15 @@ package com.pluralsight.model;
 public class Speaker {
     private String firstName;
     private String lastName;
+    private double seed;
+
+    public double getSeed() {
+        return seed;
+    }
+
+    public void setSeed(double seed) {
+        this.seed = seed;
+    }
 
     public String getFirstName() {
         return firstName;

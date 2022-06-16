@@ -12,5 +12,6 @@ public class Application {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         SpeakerService service = applicationContext.getBean("speakerService", SpeakerService.class);
         System.out.println(service.findAll().get(0).getFirstName());
+        System.out.println(service.findAll().get(0).getSeed());
     }
 }
